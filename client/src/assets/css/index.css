@@ -1,0 +1,147 @@
+:root {
+    --body-color: linear-gradient(to bottom, #2c2c2c, #1c1c1c);
+    --primary-color: rgb(77, 77, 255);
+    --sec-color: rgb(213, 88, 230);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100%;
+    font-family: "Host Grotesk", sans-serif;
+    font-size: 16px;
+    color: black; 
+    background-image: var(--body-color);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+/* PAGE STARTS */
+.main-grid {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: [nav-left] 15% [nav-main-start] 70% [nav-main-end] 15% [nav-right];
+    height: 100vh;
+    justify-items: center;
+    /* justify-content: center; */
+}
+
+/* NAVBAR STARTS */
+.nav {
+    grid-row: 1 / 2;
+    grid-column: nav-main-start/nav-main-end;
+    /* display: grid; */
+    justify-items: center;
+    max-width: 75%;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.main-nav {
+    
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-items {
+    list-style: none;
+    margin: 15px 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-items a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    transition: 0.3s ease;
+    text-wrap: nowrap;
+}
+
+.nav-items a:hover {
+    transition: 0.3s linear;
+    filter: opacity(70%);
+    translate: 0 -3px;
+    font-size: 1.1em;
+    text-decoration: underline;
+    color: var(--sec-color);
+}
+
+/* MAIN CONTENT AND CARDS STYLES */
+.main-content {
+    grid-row: 2 / 3;
+    grid-column: nav-main-start/nav-main-end;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-bottom: 50px;
+}
+
+.card {
+    max-width: 48%;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--primary-color);
+    padding: 20px;
+    margin: 1%;
+    border-radius: 5px;
+    background-color: white; 
+}
+
+/* FOOTER STYLES */
+.footer {
+    grid-row: 3 / 4;
+    grid-column: nav-left/nav-right;
+    background-color: var(--primary-color);
+    position: fixed;
+    bottom: 0;
+    color: white;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+/* ROUND LOGO STYLES */
+.round-logo {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+/* ASIDE BAR STYLES */
+.left-aside-bar, .right-aside-bar {
+    grid-row: 2 / 3;
+}
+
+.left-aside-bar {
+    grid-column: nav-left/nav-main-start;
+}
+
+.right-aside-bar {
+    grid-column: nav-main-end/nav-right;
+}

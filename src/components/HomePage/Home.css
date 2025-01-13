@@ -1,0 +1,28 @@
+.home-container {
+    /* background-color: rgb(74, 58, 148); */
+    border-radius: 0px 0px 30px 30px;
+}
+
+.home-container::before {
+    content: " ";
+    background-color: aqua;
+}
+
+.home-h1 {
+    font-family: "Baloo Paaji 2", serif;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.home-h1::after {
+    content: "";
+    display: block;
+    width: 20vh;
+    height: 3px;
+    background-color: #4154f1;
+    margin: 0px auto 0;
+}

@@ -1,0 +1,192 @@
+.navbar {
+    position: relative;
+    display: grid;
+    grid-template-rows: 100px;
+    grid-template-columns: auto auto auto;
+    font-size: 0.95rem;
+    font-family: "Poppins", serif !important;
+}
+
+.navbar-logo {
+    grid-column: 1/2;
+    display: flex;
+    flex: 1 1 0%;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.navbar-logo img {
+    max-width: 250px;
+    width: auto;
+    object-fit: contain;
+}
+
+.navbar-logo span {
+    font-family: "Playwrite HR Lijeva Guides", serif;
+    font-size: 1.7rem;
+}
+
+.main-nav {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+}
+
+.nav-items {
+    padding: 10px 25px;
+    display: flex;
+    gap: 5px;
+    position: relative;
+}
+
+.nav-items a {
+    text-decoration: none;
+}
+
+.nav-items a:hover {
+    color: #4154f1;
+    text-decoration: underline;
+    transition: all 0.2s ease;
+}
+
+.nav-items:last-child {
+    background-color: #4154f1;
+    border-radius: 5px;
+    transition: all, border-radius 0.3s ease;
+    
+}
+
+/* @keyframes borderRadiusAnimation {
+    0% {
+        border-radius: 5px;
+    }
+
+    15% {
+        border-radius : 7.5px;
+    }
+
+    25% {
+        border-radius : 10px;
+    }
+
+    35% {
+        border-radius : 12.5px;
+    }
+
+    50% {
+        border-radius : 15px;
+    }
+
+    65% {
+        border-radius : 17.5px;
+    }
+
+    75% {
+        border-radius: 20px;
+    }
+
+    85% {
+        border-radius : 22.5px;
+    }
+
+    100% {
+        border-radius: 25px;
+    }
+} */
+
+.nav-items:last-child:hover {
+    background-color: #3742a7;
+    transition: all 0.3s ease;
+    /* animation: borderRadiusAnimation 0.3s forwards; */
+
+}
+
+.nav-items:last-child a {
+    color: white;
+}
+
+.dropdown-container {
+    position: relative;
+}
+
+.dropdown-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.nav-dropdown {
+    z-index: 999;
+    background-color: white;
+    box-shadow: 0px 0px 15px #4154f1;
+    border-radius: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+}
+
+.showAnimation {
+    opacity: 1;
+    visibility: visible;
+    animation: dropdownFadeIn 0.2s ease forwards;
+}
+
+.hideAnimation {
+    opacity: 0;
+    visibility: hidden;
+    animation: dropdownFadeOut 0.2s ease forwards;
+}
+
+@keyframes dropdownFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dropdownFadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.nav-dropdown-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+
+.nav-dropdown-items {
+    padding: 10px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.nav-dropdown-items:hover {
+    color: #4154f1;
+    text-decoration: underline;
+}
