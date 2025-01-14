@@ -5,6 +5,8 @@ import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { memo } from 'react';
+import BurgerIcon from './BurgerIcon';
+// import { RxHamburgerMenu } from "react-icons/rx";
 
 const Navbar = () => {
   const [hidden, setHidden] = useState(true);
@@ -32,13 +34,6 @@ const Navbar = () => {
     }, 200);
   };
 
-  const [counter, setCounter] = useState(0);
-
-  const handleCounter = () => {
-    setCounter(counter + 1);
-  }
-
-  
 
   return (
     <div className="navbar">
@@ -77,9 +72,8 @@ const Navbar = () => {
             </div>
             {!hidden && (
               <div
-                className={`nav-dropdown ${
-                  hideAnimated ? 'hideAnimation' : 'showAnimation'
-                }`}
+                className={`nav-dropdown ${hideAnimated ? 'hideAnimation' : 'showAnimation'
+                  }`}
               >
                 <ul className="nav-dropdown-list">
                   <li className="nav-dropdown-items">Me</li>
@@ -95,6 +89,9 @@ const Navbar = () => {
             <Link to="">Get Started</Link>
           </li>
         </ul>
+      </div>
+      <div className='burger-div'>
+        <BurgerIcon className="burger-icon" />
       </div>
     </div>
   );

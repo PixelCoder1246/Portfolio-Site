@@ -1,0 +1,48 @@
+.burger {
+    font-size: 28px;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes BurgerCloseAnimation {
+    0% {
+        transform: rotate(180deg);
+        /* transform: rotateZ(0deg); */
+    }
+    100% {
+        /* transform: rotateX(90deg); */
+        transform: rotate(90deg);
+    }
+}
+
+.burgerCloseAnimation {
+    animation: BurgerCloseAnimation 0.25s ease-in-out forwards, fadeOut 0.25s ease-in-out forwards;
+}
+
+
+@keyframes CrossOpenAnimation {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.cross {
+    font-size: 28px;
+    /* transform: rotate(90deg); */
+}
+
+.crossOpenAnimation {
+    animation: CrossOpenAnimation 0.25s ease-in-out forwards, fadeOut 0.25s ease-in-out forwards;
+}

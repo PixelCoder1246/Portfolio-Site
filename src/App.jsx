@@ -10,8 +10,7 @@ function App() {
       path: '/',
       element: <Home />,
       errorElement: <div className='main'><div className='error1'>
-        Under Maintenance!!
-        FUCK OFF!!</div><video autoPlay muted loop src="../public/assets/error.mp4"></video></div>,
+        Under Maintenance!!</div><video autoPlay muted loop src="../public/assets/error.mp4"></video></div>,
     },
     {
       path: '/about',

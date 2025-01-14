@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import "./TypingEffect.css"
 
 function TypingEffect({ fullText, typingSpeed }) {
   const [text, setText] = useState('');
@@ -19,11 +20,11 @@ function TypingEffect({ fullText, typingSpeed }) {
 
   return (
     <>
-      <div>{text}</div>
+      <div className='typing-effect' style={{color : "#4154f1"}}>{text}</div>
     </>
       
 
   );
 }
 
-export default TypingEffect;
+export default (TypingEffect);
