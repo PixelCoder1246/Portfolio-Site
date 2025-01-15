@@ -20,7 +20,7 @@ function TypingEffect({ fullText, typingSpeed }) {
 
   return (
     <>
-      <div className='typing-effect' style={{color : "#4154f1"}}>{text}</div>
+      <div className='typing-effect' style={{color : "black"}}>{text}</div>
     </>
       
 

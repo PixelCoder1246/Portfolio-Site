@@ -16,8 +16,8 @@ const Home = () => {
         {/* <ErrorComponent /> */}
         <Navbar />
         <div className="home-h1">
-          <h1>
-            <TypingEffect fullText="I am a Full Stack Web Developer" typingSpeed={100} />
+          <h1 style={{textAlign : "center"}}>
+            <TypingEffect fullText="Hi, My Name is Keshav" typingSpeed={200} />
           </h1>
         </div>
       </div>

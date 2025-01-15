@@ -9,10 +9,12 @@ import BurgerIcon from './BurgerIcon';
 // import { RxHamburgerMenu } from "react-icons/rx";
 
 const Navbar = () => {
-  const [hidden, setHidden] = useState(true);
+  const [dropdownHidden, setdropdownHidden] = useState(true);
   const [hideAnimated, setHideAnimated] = useState(true);
   const timeoutRef = useRef(null);
 
+  const [navbarHidden, setnavbarHidden] = useState(true);
+  const [hideAnimatedNavbar, setHideAnimatedNavbar] = useState(true);
   useEffect(() => {
     console.log("Navbar Rendered");
   })
@@ -22,27 +24,32 @@ const Navbar = () => {
       clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
     }
-    setHidden(false);
+    setdropdownHidden(false);
     setHideAnimated(false);
   };
 
   const handleAnimationClose = () => {
     setHideAnimated(true);
     timeoutRef.current = setTimeout(() => {
-      setHidden(true);
+      setdropdownHidden(true);
       timeoutRef.current = null;
     }, 200);
   };
+
+  const handleNavClick = () => {
+    setnavbarHidden(!navbarHidden);
+    setHideAnimatedNavbar(!hideAnimatedNavbar);
+  }
 
 
   return (
     <div className="navbar">
       <div className="navbar-logo">
         {/* <img src={logo} alt="website logo" /> */}
-        <span>Sanchit</span>
+        <span>KESHAV</span>
       </div>
       <div className="main-nav">
-        <ul className="nav-list">
+        <ul className={`nav-list ${navbarHidden ? "hidden" : ""} ${hideAnimatedNavbar ? "" : "navListFadeIn"} `}>
           <li className="nav-items">
             <Link to="/">Home</Link>
           </li>
@@ -70,7 +77,7 @@ const Navbar = () => {
               <Link to="">About</Link>
               <FontAwesomeIcon icon={faCaretDown} />
             </div>
-            {!hidden && (
+            {!dropdownHidden && (
               <div
                 className={`nav-dropdown ${hideAnimated ? 'hideAnimation' : 'showAnimation'
                   }`}
@@ -91,7 +98,9 @@ const Navbar = () => {
         </ul>
       </div>
       <div className='burger-div'>
-        <BurgerIcon className="burger-icon" />
+        <div onClick={handleNavClick}>
+          <BurgerIcon className="burger-icon" />
+        </div>
       </div>
     </div>
   );
