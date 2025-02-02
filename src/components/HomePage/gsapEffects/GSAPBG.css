@@ -1,0 +1,8 @@
+.whole-area {
+    background-color: rgb(0, 0, 0);
+    min-height: 4000px;
+    height: 4000px;
+    background: url(../../../assets/scroll-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}

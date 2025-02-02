@@ -5,16 +5,14 @@ import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { memo } from 'react';
-import BurgerIcon from './BurgerIcon';
-// import { RxHamburgerMenu } from "react-icons/rx";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { IoCloseOutline } from "react-icons/io5";
 
 const Navbar = () => {
   const [dropdownHidden, setdropdownHidden] = useState(true);
   const [hideAnimated, setHideAnimated] = useState(true);
   const timeoutRef = useRef(null);
-
-  const [navbarHidden, setnavbarHidden] = useState(true);
-  const [hideAnimatedNavbar, setHideAnimatedNavbar] = useState(true);
+  const [open, setOpen] = useState(false);
   useEffect(() => {
     console.log("Navbar Rendered");
   })
@@ -37,8 +35,7 @@ const Navbar = () => {
   };
 
   const handleNavClick = () => {
-    setnavbarHidden(!navbarHidden);
-    setHideAnimatedNavbar(!hideAnimatedNavbar);
+    setOpen(!open);
   }
 
 
@@ -49,15 +46,12 @@ const Navbar = () => {
         <span>KESHAV</span>
       </div>
       <div className="main-nav">
-        <ul className={`nav-list ${navbarHidden ? "hidden" : ""} ${hideAnimatedNavbar ? "" : "navListFadeIn"} `}>
+        <ul className={`nav-list ${open ? "" : ""} ${open ? "active" : ""} `}>
           <li className="nav-items">
             <Link to="/">Home</Link>
           </li>
           <li className="nav-items">
             <Link to="/about">Contact</Link>
-          </li>
-          <li className="nav-items">
-            <Link to="">Portfolio</Link>
           </li>
           <li className="nav-items">
             <Link to="">Resume</Link>
@@ -97,10 +91,8 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className='burger-div'>
-        <div onClick={handleNavClick}>
-          <BurgerIcon className="burger-icon" />
-        </div>
+      <div className={`burgerIcon ${open? "rotate": ""}`} onClick={handleNavClick}>
+        {open ? <IoCloseOutline /> : <RxHamburgerMenu />}
       </div>
     </div>
   );

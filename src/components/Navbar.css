@@ -56,60 +56,20 @@
 }
 
 .nav-items a:hover {
-    color: #4154f1;
+    color: var(--primary-color);
     text-decoration: underline;
     transition: all 0.2s ease;
 }
 
 .nav-items:last-child {
-    background-color: #4154f1;
+    background-color: var(--primary-color);
     border-radius: 5px;
     transition: all, border-radius 0.3s ease;
-
 }
-
-/* @keyframes borderRadiusAnimation {
-    0% {
-        border-radius: 5px;
-    }
-
-    15% {
-        border-radius : 7.5px;
-    }
-
-    25% {
-        border-radius : 10px;
-    }
-
-    35% {
-        border-radius : 12.5px;
-    }
-
-    50% {
-        border-radius : 15px;
-    }
-
-    65% {
-        border-radius : 17.5px;
-    }
-
-    75% {
-        border-radius: 20px;
-    }
-
-    85% {
-        border-radius : 22.5px;
-    }
-
-    100% {
-        border-radius: 25px;
-    }
-} */
 
 .nav-items:last-child:hover {
     background-color: #3742a7;
     transition: all 0.3s ease;
-    /* animation: borderRadiusAnimation 0.3s forwards; */
 
 }
 
@@ -190,6 +150,7 @@
     transition: color 0.3s ease;
     cursor: pointer;
     text-align: center;
+    color: black;
 }
 
 .nav-dropdown-items:hover {
@@ -197,7 +158,7 @@
     text-decoration: underline;
 }
 
-.burger-div {
+.burgerIcon {
     font-size: 28px;
     /* font-family: 'Poppins', sans-serif; */
     display: flex;
@@ -208,24 +169,21 @@
     display: none;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1110px) {
 
     .navbar {
         background-color: #6877ff;
     }
-    .burger-div {
+    .burgerIcon {
         display: flex;
         animation: burgerFadeIn 0.5s ease-in-out;
+        transition : transform 0.5s ease-in-out;
     }
 
-    @keyframes burgerFadeIn {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
+    .rotate {
+        transform: rotate(180deg);
     }
+
     .navbar-logo {
         grid-column: 2/3;
         justify-content: center;
@@ -240,7 +198,9 @@
     .nav-list {
         flex-direction: column;
         position: absolute;
+        left: -450px;
         top: 0;
+        transition: left 0.5s ease-in-out;
         background-color: #6877ff;
         border-bottom-right-radius: 20px;
         width: 100%;
@@ -255,25 +215,9 @@
         display: none;
     }
 
-    @keyframes listFadeIn {
-        0% {
-            opacity: 0;
-            left: -50%;
-        }
-
-        50% {
-            opacity: 0.5;
-            left: 0%;
-        }
-
-        100% {
-            opacity: 1;
-            left: "";
-        }
-    }
-
-    .navListFadeIn {
-        animation: listFadeIn 0.5s ease-in-out;
+    .active {
+        left: 0;
+        transition: left 0.5s ease-in-out;
     }
 }
 @media screen and (max-width: 600px) {
@@ -281,22 +225,21 @@
     .navbar {
         background-color: #6877ff;
     }
-    .burger-div {
+    .burgerIcon {
         display: flex;
         animation: burgerFadeIn 0.5s ease-in-out;
+        transition : transform 0.5s ease-in-out;
+    }
+    .rotate {
+        transform: rotate(180deg);
     }
 
-    @keyframes burgerFadeIn {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
     .navbar-logo {
         grid-column: 2/3;
         justify-content: center;
+        align-items: center;
+        justify-items: center;
+        align-content: center;
     }
 
     .main-nav {
@@ -309,11 +252,13 @@
         flex-direction: column;
         position: absolute;
         top: 0;
+        left: -650px;
+        transition: left 0.5s ease-in-out;
         background-color: #6877ff;
         border-bottom-right-radius: 20px;
         border-bottom-left-radius: 20px;
-        width: 100%;
-        padding: 20px;
+        width: 92%;
+        /* padding: 20px; */
     }
 
     .nav-items a{
@@ -324,21 +269,8 @@
         display: none;
     }
 
-    @keyframes listFadeIn {
-        0% {
-            opacity: 0;
-        }
-
-        50% {
-            opacity: 0.5;
-        }
-
-        100% {
-            opacity: 1;
-        }
-    }
-
-    .navListFadeIn {
-        animation: listFadeIn 0.5s ease-in-out;
+    .active {
+        left: 0;
+        transition: left 0.5s ease-in-out;
     }
 }

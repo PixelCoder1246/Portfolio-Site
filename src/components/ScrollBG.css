@@ -1,0 +1,49 @@
+.scroll-area {
+    min-height: 5000px;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .scroll-img {
+    position: absolute;
+    width: 100vw;
+    -webkit-user-drag: none;
+    /* transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease; */
+  }
+  
+  .top {
+    top: 0;
+    left: 0;
+  }
+  
+  .bottom {
+    bottom: 0;
+    left: 0;
+  }
+  
+  .fixed {
+    position: fixed;
+    /* top: 0;
+    left: 0; */
+  }
+
+  /* .first {
+    
+  }
+
+  .second {
+
+  }
+
+  .third {
+
+  }
+
+  .fourth {
+
+  }
+
+  .fifth {
+
+  } */
+  
